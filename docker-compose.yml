@@ -1,0 +1,31 @@
+version: '3.5'
+services:
+  react-client:
+    build: ./client/
+    stdin_open: true
+    ports:
+      - '80:80'
+    networks:
+      - nest-app
+  api-server:
+    build: ./api-server/
+    ports:
+      - '5000:5000'
+    networks:
+      - nest-app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    networks:
+      - nest-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  nest-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

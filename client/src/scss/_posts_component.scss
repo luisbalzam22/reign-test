@@ -1,0 +1,67 @@
+.post-component.posts-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	.post-item {
+		font-family: comic;
+		font-weight: bold;
+		border: 1px solid #ccc;
+		padding: 1.5rem 3vw;
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: 0.5s;
+
+		&:hover {
+			background-color: #fafafa;
+		}
+	}
+
+	a.left-info {
+		color: #000;
+	}
+
+	.author {
+		color: #999;
+		padding: 0 2rem;
+	}
+
+	.date {
+		padding: 0 2rem;
+	}
+	.trash-icon {
+		display: inline-block;
+		border: none;
+		background: unset;
+		&::before {
+			content: url('../img/trash-icon.png');
+		}
+	}
+	a:hover,
+	.trash-icon:hover {
+		cursor: url('../img/pointer.png'), auto;
+	}
+}
+
+.post-component.message {
+	text-align: center;
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	.btn-refresh {
+		font-size: 2rem;
+		background-color: unset;
+		padding: 1rem 2rem;
+		border: 0.4rem solid;
+		border-radius: 0.5rem;
+		transition: 0.4s;
+		&:hover {
+			background-color: #7faae0;
+			cursor: url('/img/pointer.png'), auto;
+		}
+	}
+}
